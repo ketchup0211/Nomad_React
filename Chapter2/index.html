@@ -9,18 +9,19 @@
   <script type="text/babel">
     const root = document.getElementById("root");
     function App() {
-      // value에 해당되는 변수를 modifier를 통해 바꿀 수 있다. (연결관계)
-      const [counter, setCounter] = React.useState(0);
-      const onClick = () =>{
-        //  setCounter(counter + 1);
-        setCounter((current) => current +1)
-      };
-      console.log("rendered");
-      console.log(counter);
+      const [minutes, setMinutes] = React.useState();
+      const onChange = (event) =>{
+        console.log(event.target.value);
+        setMinutes(event.target.value);
+      }
       return (
         <div>
-          <h3>Total clicks {counter}</h3>
-          <button onClick={onClick}>increase</button>
+          <h1>Super Converter</h1>
+          <label htmlFor="minutes">Minutes</label>
+          <input value={minutes} id="minutes" placeholder = "Minutes" type = "number" onChange={onChange} />
+          <h4>You want to convert {minutes}</h4>
+          <label htmlFor="hours">Hours</label>
+          <input id = "hours" placeholder = "Hours" type = "number" />
         </div>
       );
     }
