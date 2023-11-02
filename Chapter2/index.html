@@ -12,7 +12,8 @@
       // value에 해당되는 변수를 modifier를 통해 바꿀 수 있다. (연결관계)
       const [counter, setCounter] = React.useState(0);
       const onClick = () =>{
-        setCounter(counter + 1);
+        //  setCounter(counter + 1);
+        setCounter((current) => current +1)
       };
       console.log("rendered");
       console.log(counter);
